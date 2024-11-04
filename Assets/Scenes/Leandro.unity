@@ -6386,7 +6386,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1650605997039701768, guid: b82414ed99d3ee246ab13fe52776b581, type: 3}
       propertyPath: roomLeft
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6006612425415572000, guid: b82414ed99d3ee246ab13fe52776b581, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6434,7 +6434,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9167978944961194292, guid: b82414ed99d3ee246ab13fe52776b581, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -13750,6 +13750,7 @@ MonoBehaviour:
   objectToMove: {fileID: 684751170}
   targetPosition: {fileID: 1787775033}
   initPosition: {fileID: 1881819711}
+  audioSource: {fileID: 434983992}
 --- !u!1 &1362807035 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2488078361045077066, guid: a23a89bc88b6dd643b20d6aff0b70643, type: 3}
@@ -19837,6 +19838,14 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 6227679144056706814, guid: fe046e9080b322f4eab3fdf4ac3253fc, type: 3}
+      propertyPath: sensX
+      value: 400
+      objectReference: {fileID: 0}
+    - target: {fileID: 6227679144056706814, guid: fe046e9080b322f4eab3fdf4ac3253fc, type: 3}
+      propertyPath: sensY
+      value: 400
+      objectReference: {fileID: 0}
+    - target: {fileID: 6227679144056706814, guid: fe046e9080b322f4eab3fdf4ac3253fc, type: 3}
       propertyPath: inventory
       value: 
       objectReference: {fileID: 1005790958}
@@ -19844,6 +19853,10 @@ PrefabInstance:
       propertyPath: playerCanvas
       value: 
       objectReference: {fileID: 858747879}
+    - target: {fileID: 6227679144056706814, guid: fe046e9080b322f4eab3fdf4ac3253fc, type: 3}
+      propertyPath: interactDistance
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6573244453210146495, guid: fe046e9080b322f4eab3fdf4ac3253fc, type: 3}
       propertyPath: door03
       value: 

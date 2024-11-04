@@ -8,10 +8,15 @@ public class GameManager : MonoBehaviour
     public bool roomLeft = false;
     public bool roomRight = false;
     public bool endGame = false;
-    public Inventory inventory; 
+    public Inventory inventory;
 
+    private void Start()
+    {
+       // Application.targetFrameRate = 60;
+    }
     private void Awake()
     {
+        
         if (instance == null)
         {
             instance = this;

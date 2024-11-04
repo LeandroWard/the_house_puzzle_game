@@ -1,8 +1,12 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.UIElements;
 using UnityEngine;
+using TMPro;
+using UnityEngine.SceneManagement;
+
+
+
+
 
 public enum WireColor { Red, Green, Blue};
 public enum WireType { Start, Finish};

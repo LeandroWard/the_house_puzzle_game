@@ -6,9 +6,9 @@ using UnityEngine.UI;
 
 public class NumberCube : MonoBehaviour
 {
-    public TextMeshPro numberText; // Referencia al texto que tiene el número
+    public TextMeshPro numberText; 
 
-    // Método para obtener el número como string
+   
     public string GetNumber()
     {
         if (numberText != null)
@@ -20,7 +20,7 @@ public class NumberCube : MonoBehaviour
         else
         {
             Debug.LogWarning("El campo numberText no está asignado en " + gameObject.name);
-            return ""; // Devuelve una cadena vacía si no está asignado
+            return ""; 
         }
     }
 }

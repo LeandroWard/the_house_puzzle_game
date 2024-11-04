@@ -12,7 +12,7 @@ public class PlayerControllerbola : InteractObject
     //[SerializeField] AudioSource sonidoGirar;
 
     private Rigidbody rb;
-    
+
     private float movementX;
     private float movementY;
 
@@ -21,8 +21,8 @@ public class PlayerControllerbola : InteractObject
     {
         rb = GetComponent<Rigidbody>();
         item = GetComponent<Item>();
-        
-        
+
+
     }
 
     private void OnMoveBola(InputValue movementValue)
@@ -34,7 +34,7 @@ public class PlayerControllerbola : InteractObject
         //sonidoGirar.Play();
     }
 
-   
+
 
 
     private void FixedUpdate()
@@ -47,10 +47,10 @@ public class PlayerControllerbola : InteractObject
     {
         if (other.gameObject.CompareTag("llegada"))
         {
-            
-            
+
+
         }
-       
+
     }
     public override void Interact(PlayerViewController player)
     {

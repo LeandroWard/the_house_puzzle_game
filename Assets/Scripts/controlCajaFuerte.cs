@@ -18,10 +18,12 @@ public class controlCajaFuerte : InteractObject
     [SerializeField] CinemachineVirtualCamera cameara;
     [SerializeField] TMP_InputField inputField;
     [SerializeField] TMP_Text mensajes;
+    //[SerializeField] BoxCollider BoxCollider;
     string mensaje1 = "Clave correcta!";
     string mensaje2 = "Clave incorrecta, intenta nuevamente.";
     bool estaActivo = false;
     PlayerViewController _player;
+    public GameObject door02;
 
 
     //en el interactuar pregunta si esta abierta aplica la animacion cerrar
@@ -39,7 +41,9 @@ public class controlCajaFuerte : InteractObject
                 Cerrar();
             }
             else
-            { 
+            {
+                Animator doorAnimator = door02.GetComponent<Animator>();
+                doorAnimator.SetTrigger("OpenDoor");
                 AbrirCajaFuerte();
             }
         }
@@ -48,15 +52,15 @@ public class controlCajaFuerte : InteractObject
         if (!estaActivo)
         {
             Debug.Log("jofas");
-            //cameara.Priority = 3;
+            cameara.Priority = 3;
             estaActivo = true;
             _player.OnInteract(true);
             if (estaAbierta)
             {
                 Debug.Log("esta abierta");
-                cameara.Priority = 0;
-                inputField.DeactivateInputField();
-                Cerrar();
+                 cameara.Priority = 0;
+                 inputField.DeactivateInputField();
+                 Cerrar();
 
             }
             else
@@ -72,7 +76,7 @@ public class controlCajaFuerte : InteractObject
 
     public void OnExitInteraction()
     {
-        //cameara.Priority = 0;
+        cameara.Priority = 0;
         estaActivo = false;
         _player.OnInteract(false);
     }
@@ -89,7 +93,11 @@ public class controlCajaFuerte : InteractObject
             Invoke("Borrar", 1f);
             Debug.Log("¡Palabra correcta! Abriendo la caja fuerte...");
             inputField.DeactivateInputField();
+            Animator doorAnimator = door02.GetComponent<Animator>();
+            doorAnimator.SetTrigger("OpenDoor");
+            gameObject.layer = 0;
             AbrirCajaFuerte();  // Llama a la función para abrir la caja fuerte
+           
         }
         else
         {
@@ -108,6 +116,7 @@ public class controlCajaFuerte : InteractObject
         sonidoAbrirCerrar.Play();
         estaAbierta = false;
         cameara.Priority = 0;
+        
     }
     private void AbrirCajaFuerte()
     {
@@ -116,6 +125,7 @@ public class controlCajaFuerte : InteractObject
         cameara.Priority = 0;
         sonidoAbrirCerrar.Play();
         Destroy( inputField.gameObject);
+       // BoxCollider.enabled = false;
 
         //transform.Find("botones").gameObject.SetActive(false);
         // Aquí puedes poner la lógica para abrir la caja fuerte, como activar una animación o mover un objeto.

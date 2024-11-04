@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float crouchSpeed;
     private float x, z;
     private Rigidbody rb;
-    
+
 
     [SerializeField] private bool isGrounded;
 
@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        if(!onInteract) Inputs();
+        if (!onInteract) Inputs();
     }
 
     void Inputs()
@@ -64,9 +64,9 @@ public class PlayerController : MonoBehaviour
     }
     void Crouch(bool crouching)
     {
-      
+
         isCrouching = crouching;
-        if(crouching) camera.transform.localPosition = new Vector3(0, 0, 0);
+        if (crouching) camera.transform.localPosition = new Vector3(0, 0, 0);
         else camera.transform.localPosition = new Vector3(0, 0.5f, 0);
     }
 }

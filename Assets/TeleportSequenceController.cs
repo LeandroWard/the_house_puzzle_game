@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class TeleportSequenceController : MonoBehaviour
 {
@@ -26,8 +27,13 @@ public class TeleportSequenceController : MonoBehaviour
                 if (!teleport1Activated && !teleport2Activated && !teleport3Activated)
                 {
                     teleport1Activated = true;
-                    Debug.Log("1");
                     textElement.text = clue02;
+                    if (!GameManager.instance.roomLeft)
+                    {
+                        Invoke("LoadScene1", 0f);
+                        GameManager.instance.roomLeft = true;
+                    }
+
                 }
                 else{
                     teleport1Activated = false;
@@ -44,8 +50,13 @@ public class TeleportSequenceController : MonoBehaviour
                 if (teleport1Activated && !teleport2Activated && !teleport3Activated)
                 {
                     teleport2Activated = true;
-                    Debug.Log("2");
                     textElement.text = clue03;
+                    if (!GameManager.instance.roomRight)
+                    {
+                        Invoke("LoadScene2", 0f);
+                        GameManager.instance.roomRight = true;
+                    }
+
                 }
                 else{
                     teleport1Activated = false;
@@ -87,4 +98,6 @@ public class TeleportSequenceController : MonoBehaviour
                 break;
         }
     }
+    private void LoadScene1() => SceneManager.LoadScene("Sebastian");
+    private void LoadScene2() => SceneManager.LoadScene("Santiago");
 }

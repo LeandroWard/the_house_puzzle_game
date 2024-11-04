@@ -5,7 +5,8 @@ using UnityEngine;
 public class StairsTrigger : MonoBehaviour
 {
     public GameObject door;  
-    public Light spotlight;  
+    public Light spotlight;
+    public AudioSource audioSource;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -16,7 +17,11 @@ public class StairsTrigger : MonoBehaviour
                 door.SetActive(false);
 
             if (spotlight != null)
+            {
+              audioSource.Play();
                 spotlight.enabled = true;
+            }
+            
         }
     }
 }

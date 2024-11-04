@@ -6,7 +6,8 @@ using UnityEngine.UI;
 public class LlegadaLaberinto : MonoBehaviour
 {
     [SerializeField] Gimball gimbal;
-        
+    [SerializeField] AudioSource doorSound;
+
     public GameObject door0;
 
 
@@ -20,7 +21,9 @@ public class LlegadaLaberinto : MonoBehaviour
             other.gameObject.SetActive(false);
             var bola = other.gameObject.GetComponent<PlayerControllerbola>();
             Animator doorAnimator = door0.GetComponent<Animator>();
+            
             doorAnimator.SetTrigger("OpenDoor");
+            doorSound.Play();
 
             if (bola != null)
             {

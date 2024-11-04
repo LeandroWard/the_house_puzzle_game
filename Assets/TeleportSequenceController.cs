@@ -14,6 +14,7 @@ public class TeleportSequenceController : MonoBehaviour
     [SerializeField] Transform objectToMove;    
     [SerializeField] Transform targetPosition;
     [SerializeField] Transform initPosition;
+
     private string clue01 = "You see me on maps, and I help you forget.\r\nA sinister creature waits in the shade.\r\nI’m not the way to the rising light.";
     private string clue02 = "A guiding hand that connects all hearts.\r\nWith every choice, I lead the way.\r\nI guide you onward, never out of sight.";
     private string clue03 = "I’m the path you take when the shadows loom.\r\nA direction that whispers of impending doom.\r\nThe choice to retreat in this haunted space?";

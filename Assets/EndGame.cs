@@ -5,7 +5,8 @@ public class EndTrigger : MonoBehaviour
 {
     public GameObject player;
     public Camera camera;
-
+    [SerializeField] AudioSource endSound;
+    [SerializeField] AudioSource endSound2;
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -16,8 +17,10 @@ public class EndTrigger : MonoBehaviour
             playerOne.enabled = false;
             Invoke("LoadMainMenu", 1f);
             GameManager.instance.endGame = true;
+            //endSound.Play();
+            endSound2.Play();
         }
     }
 
-    private void LoadMainMenu() => SceneManager.LoadScene("MainMenu");
+    private void LoadMainMenu() => SceneManager.LoadScene("Trans");
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using TMPro;
-using static UnityEditor.Progress;
+//using static UnityEditor.Progress;
 
 public class PlayerControllerbola : InteractObject
 {

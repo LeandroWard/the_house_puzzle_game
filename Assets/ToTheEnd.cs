@@ -10,6 +10,7 @@ public class ToTheEnd : MonoBehaviour
     [SerializeField] GameObject floor;
     [SerializeField] EnableEnd trap;
     [SerializeField] GameObject blackHole;
+    [SerializeField] AudioSource boomSound;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -18,6 +19,7 @@ public class ToTheEnd : MonoBehaviour
             Destroy(floor);
             blackHole.SetActive(true);
             Invoke("LoadMainMenu", 4f);
+            boomSound.Play();
            
         }
     }

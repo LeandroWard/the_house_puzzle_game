@@ -11,6 +11,7 @@ public class MouseClickController : MonoBehaviour
     const int MAX_NUMBER = 5;
     const string password = "06549";
     string buttonValue;
+    [SerializeField] AudioSource doorSound;
     void Update()
     {
        
@@ -43,6 +44,7 @@ public class MouseClickController : MonoBehaviour
                                     if (doorAnimator != null)
                                     {
                                         doorAnimator.SetTrigger("OpenDoor");
+                                        doorSound.Play();
                                         visorText.text = "";
                                     }
                                     else

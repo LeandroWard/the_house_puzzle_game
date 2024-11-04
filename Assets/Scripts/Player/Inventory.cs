@@ -24,14 +24,17 @@ public class Inventory : MonoBehaviour
     private void Start()
     {
         anim = GetComponent<Animator>();
-        if (GameManager.instance.roomLeft)
+        if (GameManager.instance != null)
         {
-            PickUpItem(itemCuadricula);
-        }
-        if (GameManager.instance.roomRight)
-        {
-            PickUpItem(itemLlave);
-            PickUpItem(itemCuadricula);
+            if (GameManager.instance.roomLeft)
+            {
+                PickUpItem(itemCuadricula);
+            }
+            if (GameManager.instance.roomRight)
+            {
+                PickUpItem(itemLlave);
+                PickUpItem(itemCuadricula);
+            }
         }
     }
 
@@ -78,5 +81,5 @@ public class Inventory : MonoBehaviour
         newItem.SetUp(item, item.GetItemSprite(), item.GetItemName(), this);
     }
 
-    // Puedes agregar métodos adicionales para manejar los items si es necesario
+    // Puedes agregar mï¿½todos adicionales para manejar los items si es necesario
 }

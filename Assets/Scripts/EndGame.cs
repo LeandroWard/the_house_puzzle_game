@@ -16,11 +16,11 @@ public class EndTrigger : MonoBehaviour
             cameraOne.enabled = false;
             playerOne.enabled = false;
             Invoke("LoadMainMenu", 1f);
-            GameManager.instance.endGame = true;
+            if(GameManager.instance != null) GameManager.instance.endGame = true;
             //endSound.Play();
             endSound2.Play();
         }
     }
 
-    private void LoadMainMenu() => SceneManager.LoadScene("Trans");
+    private void LoadMainMenu() => SceneManager.LoadScene("Trans", LoadSceneMode.Single);
 }

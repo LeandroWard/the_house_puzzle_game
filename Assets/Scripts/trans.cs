@@ -17,5 +17,5 @@ public class trans : MonoBehaviour
         
     }
 
-    private void LoadScene() => SceneManager.LoadScene("MainMenu");
+    private void LoadScene() => SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
 }

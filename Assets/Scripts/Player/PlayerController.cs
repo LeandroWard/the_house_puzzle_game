@@ -47,24 +47,27 @@ public class PlayerController : MonoBehaviour
         Vector3 newVel = transform.right * x + transform.forward * z;
         if (!isCrouching)
         {
-            newVel = Vector3.ClampMagnitude(newVel * (speed * Time.fixedDeltaTime), maxSpeed);
+            newVel = Vector3.ClampMagnitude(newVel.normalized * (speed * Time.fixedDeltaTime), maxSpeed);
             newVel.y = rb.velocity.y;
         }
         else
         {
-            newVel = Vector3.ClampMagnitude(newVel * (crouchSpeed * Time.fixedDeltaTime), maxSpeed);
+            newVel = Vector3.ClampMagnitude(newVel.normalized * (crouchSpeed * Time.fixedDeltaTime), maxSpeed);
             newVel.y = rb.velocity.y;
         }
         rb.velocity = newVel;
     }
 
+    public void DeactivateInputField()
+    {
+        
+    }
     public void OnInteract(bool state)
     {
         onInteract = state;
     }
     void Crouch(bool crouching)
     {
-
         isCrouching = crouching;
         if (crouching) camera.transform.localPosition = new Vector3(0, 0, 0);
         else camera.transform.localPosition = new Vector3(0, 0.5f, 0);

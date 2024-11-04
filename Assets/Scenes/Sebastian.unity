@@ -2002,7 +2002,7 @@ LightingSettings:
   m_PrefabAsset: {fileID: 0}
   m_Name: 
   serializedVersion: 6
-  m_GIWorkflowMode: 1
+  m_GIWorkflowMode: 0
   m_EnableBakedLightmaps: 1
   m_EnableRealtimeLightmaps: 1
   m_RealtimeEnvironmentLighting: 1
@@ -3451,6 +3451,10 @@ PrefabInstance:
       propertyPath: m_VersionIndex
       value: 50
       objectReference: {fileID: 0}
+    - target: {fileID: 6254804501710221013, guid: 27a80840ab2892948b7d088bd314177b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6338626409208645127, guid: 27a80840ab2892948b7d088bd314177b, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -3526,6 +3530,22 @@ PrefabInstance:
     - target: {fileID: 7415272179830930076, guid: 27a80840ab2892948b7d088bd314177b, type: 3}
       propertyPath: m_SizeDelta.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7463917181495310749, guid: 27a80840ab2892948b7d088bd314177b, type: 3}
+      propertyPath: m_Color.a
+      value: 0.69803923
+      objectReference: {fileID: 0}
+    - target: {fileID: 7463917181495310749, guid: 27a80840ab2892948b7d088bd314177b, type: 3}
+      propertyPath: m_Color.b
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7463917181495310749, guid: 27a80840ab2892948b7d088bd314177b, type: 3}
+      propertyPath: m_Color.g
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7463917181495310749, guid: 27a80840ab2892948b7d088bd314177b, type: 3}
+      propertyPath: m_Color.r
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8264170256341024460, guid: 27a80840ab2892948b7d088bd314177b, type: 3}
       propertyPath: m_Layer

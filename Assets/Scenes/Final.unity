@@ -807,8 +807,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b58c21e9bf792eb4f9d4dce21b52cfee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 500
-  maxSpeed: 500
+  speed: 1000
+  maxSpeed: 1000
   crouchSpeed: 250
   isGrounded: 0
   gravity: -30

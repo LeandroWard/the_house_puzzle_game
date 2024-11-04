@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using TMPro;
 using Cinemachine;
 using System.Drawing;
+using UnityEngine.EventSystems;
 
 public class controlCajaFuerte : InteractObject
 {
@@ -24,6 +25,7 @@ public class controlCajaFuerte : InteractObject
     bool estaActivo = false;
     PlayerViewController _player;
     public GameObject door02;
+    private bool inSelectInputField = false;
 
 
     //en el interactuar pregunta si esta abierta aplica la animacion cerrar
@@ -78,7 +80,7 @@ public class controlCajaFuerte : InteractObject
     {
         cameara.Priority = 0;
         estaActivo = false;
-        _player.OnInteract(false);
+        if(_player != null) _player.OnInteract(false);
     }
 
     public void VerificarPalabra()
@@ -91,12 +93,12 @@ public class controlCajaFuerte : InteractObject
             mensajes.color = UnityEngine.Color.green;
             mensajes.text = mensaje1;
             Invoke("Borrar", 1f);
-            Debug.Log("¡Palabra correcta! Abriendo la caja fuerte...");
+            Debug.Log("ï¿½Palabra correcta! Abriendo la caja fuerte...");
             inputField.DeactivateInputField();
             Animator doorAnimator = door02.GetComponent<Animator>();
             doorAnimator.SetTrigger("OpenDoor");
             gameObject.layer = 0;
-            AbrirCajaFuerte();  // Llama a la función para abrir la caja fuerte
+            AbrirCajaFuerte();  // Llama a la funciï¿½n para abrir la caja fuerte
            
         }
         else
@@ -128,7 +130,7 @@ public class controlCajaFuerte : InteractObject
        // BoxCollider.enabled = false;
 
         //transform.Find("botones").gameObject.SetActive(false);
-        // Aquí puedes poner la lógica para abrir la caja fuerte, como activar una animación o mover un objeto.
+        // Aquï¿½ puedes poner la lï¿½gica para abrir la caja fuerte, como activar una animaciï¿½n o mover un objeto.
         //cajaFuerte.SetActive(false);  // Ejemplo: desactiva la caja fuerte
     }
 
@@ -137,16 +139,24 @@ public class controlCajaFuerte : InteractObject
         mensajes.text =string.Empty;
 
     }
+
+    public void OnSelectInputField()
+    {
+        inSelectInputField = true;
+    }
+    public void OnDeselectInputField()
+    {
+        inSelectInputField = false;
+    }
     private void Update()
     {
-        if (estaActivo)
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                OnExitInteraction();
-            }
+            // var eventSystem = EventSystem.current;
+            // if (!eventSystem.alreadySelecting) eventSystem.SetSelectedGameObject (null);
+            inputField.MoveTextEnd(false);
+            OnExitInteraction();
         }
-
     }
 
 }
